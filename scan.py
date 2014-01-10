@@ -49,7 +49,7 @@ elif arg == "testRepos":
         session.merge(Repository(repo))
     session.commit()
     logging.info('Done.')
-"""elif arg == 'ingestOne':
+    """elif arg == 'ingestOne':
     
     session = Session()
     
