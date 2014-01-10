@@ -49,6 +49,29 @@ elif arg == "testRepos":
         session.merge(Repository(repo))
     session.commit()
     logging.info('Done.')
+"""elif arg == 'ingestOne':
+    
+    session = Session()
+    
+    # Take the id from the second argument
+    id = sys.args[2]
+    if id != '':
+        
+        # Get the repo's row
+        repo = (session.query(Repository).get(id)
+        
+        # Check if repo exists
+        if repo != None:
+            
+            # Sync the repo then merge and save it to the database
+            localRepo = LocalRepository(repo)
+            localRepo.sync()
+            session.merge(repo)
+            session.commit()
+        else:
+            logging.error('No repository with that id found')   
+    else:
+        logging.error('No id found while trying to injest one repo')"""
 elif arg == '':
     # No args, just do scan
     logging.info('Starting Scan...')
